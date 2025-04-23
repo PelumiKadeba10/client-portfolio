@@ -11,21 +11,20 @@ function Navbar() {
 
   return (
     <nav className="fixed h-full"> {/* Changed this line */}
-      <div className="z-50 h-full">
+      <div className="z-50">
         {/* Hamburger Button (for mobile) */}
-        <div className="md:hidden absolute right-0 top-4 pr-10">
+        <div className="md:hidden absolute top-6 left-6">
           <button
             onClick={toggleMenu}
             className="text-gray-700 focus:outline-none"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={28} /> : <Menu size={35} />}
           </button>
-          
         </div>
 
         {/* Side Navigation (for mobile and desktop) */}
         <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`fixed inset- bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
           <div className={`fixed grid grid-cols-1 left-0 top-0 min-h-screen w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             {/* Close Button (X) */}

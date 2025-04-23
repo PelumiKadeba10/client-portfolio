@@ -10,7 +10,7 @@ export default function About() {
   return (
     <div className="flex min-h-screen">
         <Navbar />
-        <div className='flex-1 p-6 ml-0 md:ml-52'>
+        <div className='flex-1 px-6 pt-15 ml-0 md:ml-52'>
             <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}

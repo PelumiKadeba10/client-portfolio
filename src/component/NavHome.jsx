@@ -15,7 +15,7 @@ function NavHome() {
         <div className="flex justify-center items-center pt-10">
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-12">
             {navItems.map((item) => (
               <Link
                 key={item}
@@ -28,12 +28,12 @@ function NavHome() {
           </div>
 
           {/* Hamburger Button */}
-          <div className="md:hidden absolute right-0 pr-15">
+          <div className="md:hidden absolute top-6 left-6">
             <button
               onClick={toggleMenu}
               className="text-gray-700 focus:outline-none"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={35} /> : <Menu size={35} />}
             </button>
           </div>
         </div>
