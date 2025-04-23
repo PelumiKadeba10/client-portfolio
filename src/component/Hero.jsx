@@ -56,7 +56,7 @@ function Hero() {
                 {/* Title */}
                 {showTitle && (
                     <motion.div
-                        className="bg-amber-300 px-4 py-2 mt-5 "
+                        className="bg-amber-300 px-3 py-2 mt-5 rounded"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
@@ -105,7 +105,7 @@ function Hero() {
 
             {/* Image Container */}
             <div className="flex items-center justify-center px-10 w-60%">
-                {showTitle && (
+                {showDesc && (
                 <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

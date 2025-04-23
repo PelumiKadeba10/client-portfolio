@@ -45,10 +45,9 @@ function NavHome() {
         >
           <div className={`fixed grid grid-cols-1 left-0 top-0 h-full w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             {/* Close Button (X) */}
-            <div className="p-4 text-xl font-bold text-gray-900 flex justify-between items-center">
-              <div>TimDesigns</div>
-              <button onClick={toggleMenu} className="text-gray-900">
-                <X className='hover:bg-red-500' size={28} />
+            <div className="p-4 text-xl font-bold text-gray-900">
+              <button onClick={toggleMenu} className="text-gray-900 hover:bg-red-500 hover:text-white rounded">
+                <X  size={28} />
               </button>
             </div>
 
