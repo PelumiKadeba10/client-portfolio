@@ -10,8 +10,8 @@ function Navbar() {
   const navItems = ['Home', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
 
   return (
-    <nav className="">
-      <div className="z-50">
+    <nav className="fixed h-full"> {/* Changed this line */}
+      <div className="z-50 h-full">
         {/* Hamburger Button (for mobile) */}
         <div className="md:hidden absolute right-0 top-4 pr-10">
           <button
@@ -27,7 +27,7 @@ function Navbar() {
         <div
           className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
-          <div className={`fixed grid grid-cols-1 left-0 top-0 h-full w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          <div className={`fixed grid grid-cols-1 left-0 top-0 min-h-screen w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             {/* Close Button (X) */}
             <div className="p-4 text-xl font-bold text-gray-900 flex justify-between items-center">
             <button onClick={toggleMenu} className="text-gray-900 hover:bg-red-500 hover:text-white rounded">
