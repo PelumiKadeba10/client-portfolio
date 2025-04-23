@@ -20,7 +20,7 @@ function Hero() {
     }, [])
 
     return (
-        <div className="flex flex-col space-y-10 md:flex-row min-h-screen justify-between px-20 py-20 ">
+        <div className="flex flex-col space-y-10 md:flex-row min-h-screen justify-between px-15 py-20 ">
             {/* Text Container */}
             <div className="flex flex-col space-y-3 pr-10">
                 {/* Line 1 */}
@@ -56,7 +56,7 @@ function Hero() {
                 {/* Title */}
                 {showTitle && (
                     <motion.div
-                        className="bg-yellow-300 px-4 py-2 mt-5 "
+                        className="bg-amber-300 px-4 py-2 mt-5 "
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
