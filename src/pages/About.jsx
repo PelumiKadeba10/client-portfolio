@@ -49,10 +49,10 @@ export default function About() {
                         />
                     </span>
                     {showSecond && (
-                        <span className="text-amber-400">
+                        <span className="text-[#8D8D8D]">
                             &nbsp;
                             <Typewriter
-                                words={["Experienced Graphic Designer and Social Media Manager."]}
+                                words={["Experienced Graphics and UI/UX designer."]}
                                 cursorStyle="_"
                                 typeSpeed={70}
                                 delaySpeed={1000}
@@ -68,7 +68,7 @@ export default function About() {
                     animate={{ opacity: showParagraph ? 1 : 0 }}
                     transition={{ duration: 1 }}
                 >
-                    I'm a passionate freelance graphic designer and social media manager. 
+                    I'm a passionate freelance Graphics and UI/UX designer.
                     I specialize in brand visuals, marketing graphics, and motion-enhanced designs. 
                     My mission is to elevate your online presence through high-quality visuals and strategy.
                 </motion.p>

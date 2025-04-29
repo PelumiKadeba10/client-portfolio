@@ -62,7 +62,10 @@ function Hero() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <p className="text-2xl text-black">
-                            GRAPHIC DESIGNER / SOCIAL MEDIA MANAGER
+                            <Typewriter
+                                words={["GRAPHICS AND UI/UX DESIGNER"]}
+                                typeSpeed={70}
+                            />
                         </p>
                     </motion.div>
                 )}
@@ -83,7 +86,7 @@ function Hero() {
                         }}
                     >
                         {[
-                            "I’m Ashaolu Timothy, a passionate freelance graphic designer and social media manager with expertise in crafting visually compelling content that tells a story.",
+                            "I’m Ashaolu Timothy, a passionate freelance graphics and UI/UX Designer with expertise in crafting visually compelling content that tells a story.",
                             "I specialize in creating brand visuals, marketing graphics, and motion-enhanced designs that captivate audiences.",
                             "My mission is to help businesses elevate their online presence through high-quality graphics and strategic content.",
                         ].map((line, index) => (
@@ -110,7 +113,7 @@ function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, ease: 'easeOut' }}
-                className="w-[400px] h-[400px] rounded-xl shadow-xl overflow-hidden"
+                className="w-[400px] h-[450px] rounded-xl shadow-xl overflow-hidden"
                 >
                     <img
                     src="Oba.png"
