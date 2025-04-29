@@ -10,21 +10,24 @@ function Navbar() {
   const navItems = ['Home', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
 
   return (
-    <nav className="fixed h-full"> {/* Changed this line */}
-      <div className="z-50">
-        {/* Hamburger Button (for mobile) */}
-        <div className="md:hidden absolute top-6 left-6">
-          <button
-            onClick={toggleMenu}
-            className="text-gray-700 focus:outline-none"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={35} />}
-          </button>
-        </div>
+    <>
+    {/* Hamburger Button (for mobile) */}
+    <div className="md:hidden flex justify-end z-50 absolute top-6 left-6">
+        <button
+          onClick={toggleMenu}
+          className="text-gray-700 focus:outline-none"
+        >
+          {isOpen ?  null : <Menu size={35} />}
+        </button>
+    </div>
+
+    <nav className=" fixed z-60 h-full"> {/* Changed this line */}
+      <div className="">
+
 
         {/* Side Navigation (for mobile and desktop) */}
         <div
-          className={`fixed inset- bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`inset- bg-gray-900 bg-opacity-50 z-50 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
           <div className={`fixed grid grid-cols-1 left-0 top-0 min-h-screen w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             {/* Close Button (X) */}
@@ -68,6 +71,7 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    </>
   )
 }
 

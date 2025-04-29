@@ -9,9 +9,10 @@ export default function About() {
   const [showSecond, setShowSecond] = useState(false);
 
   return (
+    <>
+    <Navbar />
     <div className="flex min-h-screen">
-        <Navbar />
-        <div className='flex-1 pt-10 ml-0 md:ml-52 justify-center items-center px-20'>
+        <div className='flex-1 md:pt-10 pt-25 ml-0 md:ml-52 justify-center items-center px-20'>
             <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -144,5 +145,6 @@ export default function About() {
             </motion.div>
         </div>
     </div>
+    </>
   );
 }
