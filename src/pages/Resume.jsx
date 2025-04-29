@@ -12,7 +12,7 @@ export default function Resume() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="mt-5 border-2 border-slate-600 py-2 rounded-md"
+            className="mt-5 border-2 border-slate-600 py-3 rounded-md"
             initial={{ opacity: 0, y: -20, x: -20 }}
             animate={{ opacity: 1, y: 0, x: 0 }}
             transition={{ duration: 0.8 }}
