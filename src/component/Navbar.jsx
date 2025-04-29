@@ -46,7 +46,7 @@ function Navbar() {
                 <Link
                   key={item}
                   to={path}
-                  className="hover:text-[#8d8d8d] transition duration-300"
+                  className="hover:text-[#8d8d8d] transition duration-300 text-center"
                 >
                   {label}
                 </Link>

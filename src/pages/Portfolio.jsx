@@ -71,7 +71,7 @@ export default function Portfolio() {
           </motion.div>
         </motion.div> */}
 
-        {/* Flyers Section */}\
+        {/* Flyers Section */}
         <div ref={flyersRef}>
         <motion.div  className="mb-12 mt-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h2 className="text-3xl font-bold mb-6 text-slate-800">Flyers</h2>
@@ -86,7 +86,8 @@ export default function Portfolio() {
         </div>
 
         {/* Posters Section */}
-        <motion.div ref={postersRef} className="mb-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <div ref={postersRef}>
+        <motion.div  className="mb-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h2 className="text-3xl font-bold mb-6 text-slate-800">Posters</h2>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {posterImages.map((image, index) => (
@@ -96,9 +97,11 @@ export default function Portfolio() {
             ))}
           </motion.div>
         </motion.div>
+        </div>
 
         {/* Carousels Section */}
-        <motion.div ref={carouselsRef} className="mb-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <div ref={carouselsRef}>
+        <motion.div className="mb-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h2 className="text-3xl font-bold mb-6 text-slate-800">Carousels</h2>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {carouselImages.map((image, index) => (
@@ -108,9 +111,11 @@ export default function Portfolio() {
             ))}
           </motion.div>
         </motion.div>
+        </div>
 
         {/* Web Design Section */}
-        <motion.div ref={webDesignRef} className="mb-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <div ref={webDesignRef}>
+        <motion.div  className="mb-12" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h2 className="text-3xl font-bold mb-6 text-slate-800">Web Design</h2>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {webDesignImages.map((image, index) => (
@@ -120,6 +125,7 @@ export default function Portfolio() {
             ))}
           </motion.div>
         </motion.div>
+        </div>
     </div>
     </>
   );
