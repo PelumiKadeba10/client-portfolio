@@ -6,7 +6,7 @@ export default function Icon() {
             <table className="w-full text-white rounded-lg overflow-hidden">
                 <tbody>
                     <tr className=" border-gray-300">
-                        <td className="p-12 border-gray-300 text-center grid grid-cols-1">
+                        <td className="p-12 border-gray-300 border-e-7 text-center grid grid-cols-1">
                             <p className="text-4xl font-semibold pb-3">
                                 <CountUp end={5} duration={2} />+
                             </p>
@@ -26,7 +26,7 @@ export default function Icon() {
                             </p>
                             Satisfied Clients
                         </td>
-                        <td className="p-12 text-center">
+                        <td className="p-12 border-s-7 text-center">
                             <p className="text-4xl font-semibold pb-3">
                                 <CountUp end={100} duration={2} />+
                             </p>

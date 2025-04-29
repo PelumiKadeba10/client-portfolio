@@ -10,7 +10,7 @@ export default function About() {
   return (
     <div className="flex min-h-screen">
         <Navbar />
-        <div className='flex-1 px-6 pt-15 ml-0 md:ml-52'>
+        <div className='flex-1 px-6 pt-15 ml-0 md:ml-52 justify-center items-center px-20'>
             <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -32,7 +32,7 @@ export default function About() {
                 transition={{ delay: 0.6, duration: 1 }}
                 >
                 <motion.p
-                    className="text-2xl font-semibold"
+                    className="text-2xl font-semibold mt-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 1 }}
@@ -69,6 +69,65 @@ export default function About() {
             transition={{ duration: 1.0 }}
             >
                 <Icon />
+            </motion.div>
+
+            <motion.div
+            className='flex justify-center align-center mt-20'
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.0 }}
+            >
+               <div className="px-4 md:px-8 lg:px-24">
+                <p className="text-4xl font-bold pl-10">What I Do ?</p>
+
+                <div className="grid grid-cols-1 mt-2">
+                    {/* CARD */}
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 rounded-lg">
+                    <img src="Pen.png" alt="Brand Design" className="w-30 h-30" />
+                    <div className="text-center md:text-left">
+                        <p className="font-bold text-2xl mb-2">Brand Design</p>
+                        <p className="font-semibold text-lg leading-relaxed">
+                        Crafting strong visual identities that communicate your brand’s personality and values,
+                        from logos and color schemes to full brand guidelines.
+                        </p>
+                    </div>
+                    </div>
+
+                    {/* CARD */}
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6  p-6 rounded-lg">
+                    <img src="Palette.png" alt="Social Media Design" className="w-30 h-30 object-contain" />
+                    <div className="text-center md:text-left">
+                        <p className="font-bold text-2xl mb-2">Social Media Design</p>
+                        <p className="font-semibold text-lg leading-relaxed">
+                        Eye-catching and purpose-driven poster designs for events, products, or promotions that instantly grab attention and leave a lasting impression.
+                        </p>
+                    </div>
+                    </div>
+
+                    {/* CARD */}
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-3 p-6 rounded-lg ">
+                    <img src="WebUI.png" alt="Web UI Design" className="w-30 h-30 object-contain" />
+                    <div className="text-center md:text-left">
+                        <p className="font-bold text-2xl mb-2">Web UI Design</p>
+                        <p className="font-semibold text-lg leading-relaxed">
+                        Designing clean, user-friendly, and modern web interfaces that enhance user experience and bring your website vision to life.
+                        </p>
+                    </div>
+                    </div>
+
+                    {/* CARD */}
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 rounded-lg">
+                    <img src="Mobile.png" alt="UI Design (Mobile & Web Apps)" className="w-30 h-30 object-contain" />
+                    <div className="text-center md:text-left">
+                        <p className="font-bold text-2xl mb-2">UI Design (Mobile & Web Apps)</p>
+                        <p className="font-semibold text-lg leading-relaxed">
+                        Creating intuitive, aesthetically pleasing, and functional user interfaces for mobile and web applications that keep users engaged and satisfied.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
             </motion.div>
         </div>
     </div>

@@ -47,7 +47,7 @@ function Hero() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <Typewriter
-                            words={["I'm Timothy"]}
+                            words={["I'm Ashaolu Timothy"]}
                             typeSpeed={70}
                         />
                     </motion.p>
