@@ -6,18 +6,19 @@ import Icon from '../component/AboutIcon';
 
 export default function About() {
   const [showParagraph, setShowParagraph] = useState(false);
+  const [showSecond, setShowSecond] = useState(false);
 
   return (
     <div className="flex min-h-screen">
         <Navbar />
-        <div className='flex-1 px-6 pt-15 ml-0 md:ml-52 justify-center items-center px-20'>
+        <div className='flex-1 pt-10 ml-0 md:ml-52 justify-center items-center px-20'>
             <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
             >
                 <motion.div
-                className="mt-5 border border-slate-300 py-5"
+                className="mt-5 border-2 border-slate-600 py-5"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -25,31 +26,43 @@ export default function About() {
                 <p className="text-5xl font-bold text-center">ABOUT ME</p>
                 </motion.div>
 
-                <motion.div
-                className="grid grid-cols-1 gap-4 mt-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 1 }}
-                >
+            <motion.div
+            className="grid grid-cols-1 gap-4 mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 1 }}
+            >
                 <motion.p
-                    className="text-2xl font-semibold mt-10"
+                    className="text-2xl font-bold mt-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 1 }}
                 >
-                    <Typewriter
-                    key="typewriter"  
-                    words={['I\'m Ashaolu Timothy, Experienced Graphic Designer and Social media Manager.']}
-                    cursorStyle="_"
-                    typeSpeed={70}
-                    deleteSpeed={0}
-                    delaySpeed={1000}
-                    onType={() => setShowParagraph(true)}
-                    />
+                    <span className="text-black">
+                        <Typewriter
+                            words={["I'm Ashaolu Timothy,"]}
+                            cursor={false}
+                            typeSpeed={70}
+                            delaySpeed={1000}
+                            onType={() => setShowSecond(true)}
+                        />
+                    </span>
+                    {showSecond && (
+                        <span className="text-amber-400">
+                            &nbsp;
+                            <Typewriter
+                                words={["Experienced Graphic Designer and Social Media Manager."]}
+                                cursorStyle="_"
+                                typeSpeed={70}
+                                delaySpeed={1000}
+                                onType={() => setShowParagraph(true)}
+                            />
+                        </span>
+                    )}
                 </motion.p>
 
                 <motion.p
-                    className="text-lg text-gray-800"
+                    className="text-l font-medium text-gray-800"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: showParagraph ? 1 : 0 }}
                     transition={{ duration: 1 }}
@@ -86,7 +99,7 @@ export default function About() {
                     <img src="Pen.png" alt="Brand Design" className="w-30 h-30" />
                     <div className="text-center md:text-left">
                         <p className="font-bold text-2xl mb-2">Brand Design</p>
-                        <p className="font-semibold text-lg leading-relaxed">
+                        <p className="font-semibold text-l leading-relaxed">
                         Crafting strong visual identities that communicate your brand’s personality and values,
                         from logos and color schemes to full brand guidelines.
                         </p>
@@ -98,7 +111,7 @@ export default function About() {
                     <img src="Palette.png" alt="Social Media Design" className="w-30 h-30 object-contain" />
                     <div className="text-center md:text-left">
                         <p className="font-bold text-2xl mb-2">Social Media Design</p>
-                        <p className="font-semibold text-lg leading-relaxed">
+                        <p className="font-semibold text-l leading-relaxed">
                         Eye-catching and purpose-driven poster designs for events, products, or promotions that instantly grab attention and leave a lasting impression.
                         </p>
                     </div>
@@ -109,7 +122,7 @@ export default function About() {
                     <img src="WebUI.png" alt="Web UI Design" className="w-30 h-30 object-contain" />
                     <div className="text-center md:text-left">
                         <p className="font-bold text-2xl mb-2">Web UI Design</p>
-                        <p className="font-semibold text-lg leading-relaxed">
+                        <p className="font-semibold text-l leading-relaxed">
                         Designing clean, user-friendly, and modern web interfaces that enhance user experience and bring your website vision to life.
                         </p>
                     </div>
@@ -120,7 +133,7 @@ export default function About() {
                     <img src="Mobile.png" alt="UI Design (Mobile & Web Apps)" className="w-30 h-30 object-contain" />
                     <div className="text-center md:text-left">
                         <p className="font-bold text-2xl mb-2">UI Design (Mobile & Web Apps)</p>
-                        <p className="font-semibold text-lg leading-relaxed">
+                        <p className="font-semibold text-l leading-relaxed">
                         Creating intuitive, aesthetically pleasing, and functional user interfaces for mobile and web applications that keep users engaged and satisfied.
                         </p>
                     </div>
