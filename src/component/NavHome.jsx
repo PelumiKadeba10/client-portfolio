@@ -7,7 +7,7 @@ function NavHome() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const navItems = ['Home', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
+  const navItems = ['/', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
 
   return (
     <nav className="">
@@ -16,15 +16,20 @@ function NavHome() {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-12">
-            {navItems.map((item) => (
+          {navItems.map((item) => {
+            const path = item === '/' ? '/' : `/${item.toLowerCase()}`
+            const label = item === '/' ? 'Home' : item
+            return (
               <Link
                 key={item}
-                to={`/${item.toLowerCase()}`}
-                className="hover:text-amber-300 transition duration-300"
+                to={path}
+                className="hover:text-amber-300 transition duration-200"
               >
-                {item}
+                {label}
               </Link>
-            ))}
+            )
+          })}
+
           </div>
 
           {/* Hamburger Button */}
@@ -41,7 +46,7 @@ function NavHome() {
         {/* Mobile Menu */}
         {isOpen && (
           <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? '' : 'opacity-0 pointer-events-none'}`}
         >
           <div className={`fixed grid grid-cols-1 left-0 top-0 h-full w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             {/* Close Button (X) */}
@@ -53,16 +58,20 @@ function NavHome() {
 
             {/* Navigation Items */}
             <div className="flex flex-col space-y-6 px-4 py-8">
-              {navItems.map((item) => (
+            {navItems.map((item) => {
+              const path = item === '/' ? '/' : `/${item.toLowerCase()}`
+              const label = item === '/' ? 'Home' : item
+              return (
                 <Link
                   key={item}
-                  to={`/${item.toLowerCase()}`}
-                  className="text-lg text-center text-gray-700 hover:text-white hover: transition duration-300"
-                  onClick={() => setIsOpen(false)} // Close menu on item click
+                  to={path}
+                  className="hover:text-[#8D8D8D] transition duration-200 text-center"
                 >
-                  {item}
+                  {label}
                 </Link>
-              ))}
+              )
+            })}
+
             </div>
           </div>
         </div>

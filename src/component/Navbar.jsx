@@ -7,7 +7,7 @@ function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const navItems = ['Home', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
+  const navItems = ['/', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
 
   return (
     <>
@@ -21,7 +21,7 @@ function Navbar() {
         </button>
     </div>
 
-    <nav className=" fixed z-60 h-full"> {/* Changed this line */}
+    <nav className=" fixed z-60 h-full"> 
       <div className="">
 
 
@@ -39,16 +39,20 @@ function Navbar() {
 
             {/* Navigation Items */}
             <div className="flex flex-col space-y-6 px-4 py-8">
-              {navItems.map((item) => (
+            {navItems.map((item) => {
+              const path = item === '/' ? '/' : `/${item.toLowerCase()}`
+              const label = item === '/' ? 'Home' : item
+              return (
                 <Link
                   key={item}
-                  to={`/${item.toLowerCase()}`}
-                  className="text-lg text-center text-gray-700 hover:text-white hover: transition duration-300"
-                  onClick={() => setIsOpen(false)} // Close menu on item click
+                  to={path}
+                  className="hover:text-[#8d8d8d] transition duration-300"
                 >
-                  {item}
+                  {label}
                 </Link>
-              ))}
+              )
+            })}
+
             </div>
           </div>
         </div>
@@ -58,15 +62,20 @@ function Navbar() {
           
           {/* Navigation Items */}
           <div className="flex flex-col space-y-6 justify-center text-center px-4 py-8">
-            {navItems.map((item) => (
-              <Link
-                key={item}
-                to={`/${item.toLowerCase()}`}
-                className="text-lg text-gray-700 hover:text-white transition duration-300"
-              >
-                {item}
-              </Link>
-            ))}
+          {navItems.map((item) => {
+              const path = item === '/' ? '/' : `/${item.toLowerCase()}`
+              const label = item === '/' ? 'Home' : item
+              return (
+                <Link
+                  key={item}
+                  to={path}
+                  className="hover:text-[#8d8d8d] transition duration-200"
+                >
+                  {label}
+                </Link>
+              )
+            })}
+
           </div>
         </div>
       </div>

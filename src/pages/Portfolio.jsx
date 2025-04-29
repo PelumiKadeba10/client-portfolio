@@ -78,7 +78,7 @@ export default function Portfolio() {
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {flyerImages.map((image, index) => (
               <motion.div key={index} className="relative rounded-md overflow-hidden" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 + index * 0.2, duration: 1 }}>
-                <img src={image.src} alt={image.title} className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
+                <img src={image.src} alt={image.title} loading='lazy' className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
               </motion.div>
             ))}
           </motion.div>
@@ -91,7 +91,7 @@ export default function Portfolio() {
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {posterImages.map((image, index) => (
               <motion.div key={index} className="relative rounded-md overflow-hidden" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 + index * 0.2, duration: 1 }}>
-                <img src={image.src} alt={`Poster ${index + 1}`} className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
+                <img src={image.src} alt={`Poster ${index + 1}`} loading='lazy' className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
               </motion.div>
             ))}
           </motion.div>
@@ -103,7 +103,7 @@ export default function Portfolio() {
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {carouselImages.map((image, index) => (
               <motion.div key={index} className="relative rounded-md overflow-hidden" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 + index * 0.2, duration: 1 }}>
-                <img src={image.src} alt={image.title} className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
+                <img src={image.src} alt={image.title} loading='lazy' className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
               </motion.div>
             ))}
           </motion.div>
@@ -115,7 +115,7 @@ export default function Portfolio() {
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
             {webDesignImages.map((image, index) => (
               <motion.div key={index} className="relative rounded-md overflow-hidden" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 + index * 0.2, duration: 1 }}>
-                <img src={image.src} alt={image.title} className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
+                <img src={image.src} alt={image.title} loading='lazy' className="w-full h-72 md:h-80 lg:h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-lg" />
               </motion.div>
             ))}
           </motion.div>

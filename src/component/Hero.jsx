@@ -23,7 +23,6 @@ function Hero() {
         <div className="flex flex-col space-y-10 md:flex-row min-h-screen justify-between px-15 py-20 ">
             {/* Text Container */}
             <div className="flex flex-col space-y-3 pr-10">
-                {/* Line 1 */}
                 <motion.p
                     className="text-3xl"
                     initial={{ opacity: 0, y: 20 }}
