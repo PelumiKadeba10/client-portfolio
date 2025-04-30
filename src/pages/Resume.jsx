@@ -1,5 +1,6 @@
-import Navbar from '../component/Navbar'
-import { motion } from 'framer-motion'
+import Navbar from '../component/Navbar';
+import { motion } from 'framer-motion';
+import { FileText } from 'lucide-react';
 
 export default function Resume() {
   return (
@@ -112,6 +113,21 @@ export default function Resume() {
             </motion.div>
           </motion.div>
         </motion.div>
+
+        {/* ===== Resume Download ===== */} 
+        <motion.div
+          className="flex justify-end mb-10"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 1 }}
+        >
+          <a href="/Ashaolu_Timothy_Resume.pdf"
+           download className="bg-amber-300 flex text-slate-800 font-semibold py-2 px-4 rounded-md shadow-md hover:bg-amber-400 transition duration-200">
+            Download Resume (PDF)
+            <FileText className="ml-2 text-slate-800" size={20} />
+          </a>
+        </motion.div>
+        
       </div>
     </>
   );

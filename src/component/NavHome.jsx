@@ -21,12 +21,15 @@ function NavHome() {
             const label = item === '/' ? 'Home' : item
             return (
               <Link
-                key={item}
-                to={path}
-                className="hover:text-amber-300 transition duration-200"
-              >
+              key={item}
+              to={path}
+              className="relative inline-block"
+            >
+              <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-amber-300 after:transition-all after:duration-300 hover:after:w-full">                
                 {label}
-              </Link>
+              </span>
+              <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-amber-300 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
             )
           })}
 
@@ -65,7 +68,7 @@ function NavHome() {
                 <Link
                   key={item}
                   to={path}
-                  className="hover:text-[#8D8D8D] transition duration-200 text-center"
+                  className="hover:text-white transition duration-200 text-center text-xl"
                 >
                   {label}
                 </Link>
