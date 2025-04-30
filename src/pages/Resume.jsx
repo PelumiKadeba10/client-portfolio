@@ -10,7 +10,7 @@ export default function Resume() {
   
     useEffect(() => {
       const handleScroll = () => {
-        const threshold = 600; 
+        const threshold = 100; 
         setShowTopper(window.scrollY > threshold);
       };
     
@@ -25,7 +25,7 @@ export default function Resume() {
   return (
     <>
       <Navbar />
-      <div className='flex-1 md:pt-10 pt-25 ml-0 md:ml-52 justify-center items-center px-6 md:px-20'>
+      <div ref={pageTop} className='flex-1 md:pt-10 pt-25 ml-0 md:ml-52 justify-center items-center px-6 md:px-20'>
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
