@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import Navbar from '../component/Navbar';
 import ProjectsNav from '../component/ProjectsNav';
-import { useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { ArrowUp } from 'lucide-react';
 
 const flyerImages = [
   { src: '/Portfolio_images/anticipate.jpg', title: 'Anticipate' },
@@ -43,6 +44,19 @@ export default function Portfolio() {
   const postersRef = useRef(null);
   const carouselsRef = useRef(null);
   const webDesignRef = useRef(null);
+  const pageTop = useRef(null);
+
+  const [showTopper, setShowTopper] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const threshold = 600; 
+        setShowTopper(window.scrollY > threshold);
+      };
+    
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
   const scrollTo = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -56,6 +70,7 @@ export default function Portfolio() {
             refs={{ flyersRef, postersRef, carouselsRef, webDesignRef }}
         />
     <div className="flex-1 md:pt-10 pt-15 ml-0 md:ml-52 justify-center items-center px-6 md:px-20">
+      <div ref={pageTop}></div>
         {/* <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -127,6 +142,18 @@ export default function Portfolio() {
         </motion.div>
         </div>
     </div>
+
+    {showTopper && (
+      <motion.button
+      onClick={() => scrollTo(pageTop)}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      className="fixed bottom-15 right-1 bg-black text-white p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 z-50"
+      aria-label="Scroll to top"
+    >
+      <ArrowUp className="duration-300 hover:text-black text-white" />
+    </motion.button>
+        )}
     </>
   );
 }

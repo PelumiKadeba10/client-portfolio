@@ -1,12 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef} from 'react';
 import Navbar from '../component/Navbar'
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import Icon from '../component/AboutIcon';
+import { ArrowUp } from 'lucide-react';
+
 
 export default function About() {
   const [showParagraph, setShowParagraph] = useState(false);
   const [showSecond, setShowSecond] = useState(false);
+  const [showTopper, setShowTopper] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = 600; 
+      setShowTopper(window.scrollY > threshold);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const pageTop = useRef(null);
+
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <>
@@ -24,7 +43,7 @@ export default function About() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 >
-                <p className="text-5xl font-bold text-center">ABOUT ME</p>
+                <p className="text-5xl font-bold text-center" ref={pageTop}>ABOUT ME</p>
                 </motion.div>
 
             <motion.div
@@ -145,6 +164,19 @@ export default function About() {
             </motion.div>
         </div>
     </div>
+
+    {showTopper && (
+        <motion.button
+        onClick={() => scrollTo(pageTop)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 right-6 bg-black text-white p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 z-50"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="duration-300 hover:text-black text-white" />
+      </motion.button>
+    )}
+
     </>
   );
 }

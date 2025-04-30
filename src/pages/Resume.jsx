@@ -1,8 +1,27 @@
+import { useEffect, useState, useRef } from 'react';
 import Navbar from '../component/Navbar';
 import { motion } from 'framer-motion';
-import { FileText } from 'lucide-react';
+import { FileText, ArrowUp } from 'lucide-react';
+
 
 export default function Resume() {
+  const pageTop = useRef(null);
+  const [showTopper, setShowTopper] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const threshold = 600; 
+        setShowTopper(window.scrollY > threshold);
+      };
+    
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <>
       <Navbar />
@@ -129,6 +148,18 @@ export default function Resume() {
         </motion.div>
         
       </div>
+
+      {showTopper && (
+      <motion.button
+      onClick={() => scrollTo(pageTop)}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      className="fixed bottom-10 left-6 bg-black text-white p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 z-50"
+      aria-label="Scroll to top"
+      >
+        <ArrowUp className="duration-300 hover:text-black text-white" />
+      </motion.button>
+        )}
     </>
   );
 }

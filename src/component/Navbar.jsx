@@ -7,7 +7,7 @@ function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const navItems = ['/', 'About', 'Resume', 'Portfolio', 'Testimonials', 'Contact']
+  const navItems = ['/', 'About', 'Resume', 'Portfolio', 'Recommendations', 'Contact']
 
   return (
     <>
