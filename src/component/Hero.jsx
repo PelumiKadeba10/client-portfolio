@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 
+
+
 function Hero() {
     const [firstDone, setFirstDone] = useState(false)
     const [showTitle, setShowTitle] = useState(false)
@@ -103,6 +105,7 @@ function Hero() {
                         ))}
                     </motion.div>
                 )}
+
             </div>
 
             {/* Image Container */}

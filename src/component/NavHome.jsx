@@ -7,7 +7,7 @@ function NavHome() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const navItems = ['/', 'About', 'Resume', 'Portfolio', 'Recommendations', 'Contact']
+  const navItems = ['/', 'Resume', 'Portfolio', 'Contact']
 
   return (
     <nav className="">
@@ -49,7 +49,7 @@ function NavHome() {
         {/* Mobile Menu */}
         {isOpen && (
           <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? '' : 'opacity-0 pointer-events-none'}`}
+          className={`fixed inset-0 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? '' : 'opacity-0 pointer-events-none'}`}
         >
           <div className={`fixed grid grid-cols-1 left-0 top-0 h-full w-60 bg-amber-300 shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             {/* Close Button (X) */}

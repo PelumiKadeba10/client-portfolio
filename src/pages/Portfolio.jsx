@@ -36,7 +36,6 @@ const carouselImages = [
 
 const webDesignImages = [
   { src: '/Portfolio_images/Web1.png', title: 'Web Design 1' },
-  { src: '/Portfolio_images/Web2.png', title: 'Web Design 2' },
 ];
 
 export default function Portfolio() {
